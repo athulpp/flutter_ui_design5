@@ -14,7 +14,7 @@ class Order extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Column(
+        child: ListView(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,7 +61,10 @@ class Order extends StatelessWidget {
                       Icons.receipt,
                       color: Colors.blue,
                     ),
-                    Text('RECIEPT',style: TextStyle(color: Colors.blue),)
+                    Text(
+                      'RECIEPT',
+                      style: TextStyle(color: Colors.blue),
+                    )
                   ],
                 ),
               ],
@@ -209,7 +212,11 @@ class Order extends StatelessWidget {
                       ),
                     ),
                     IconButton(
-                        icon: FaIcon(FontAwesomeIcons.whatsapp,color: Colors.green,size: 30,),
+                        icon: FaIcon(
+                          FontAwesomeIcons.whatsapp,
+                          color: Colors.green,
+                          size: 30,
+                        ),
                         onPressed: () {}),
                   ],
                 )
@@ -237,13 +244,15 @@ class Order extends StatelessWidget {
               height: 15,
             ),
             Row(
-              mainAxisAlignment:MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(padding: EdgeInsets.only(left: 3)),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('City', style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text('City',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16)),
                     Text('Banglore')
                   ],
                 ),
@@ -253,12 +262,93 @@ class Order extends StatelessWidget {
                   children: [
                     Text(
                       'Pincode',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                     ),
                     Text('560061')
                   ],
-                )
+                ),
               ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text(
+                    'Payment',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  Row(
+                    children: [
+                      Text('online'),
+                      SizedBox(
+                        width: 312,
+                      ),
+                      Container(
+                        decoration:
+                            BoxDecoration(color: Colors.green.withOpacity(0.3)),
+                        child: Text(
+                          'PAID',
+                          style: TextStyle(
+                              color: Colors.green, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                ])
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Divider(),
+            Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+              Text(
+                'ADDITIONAL INFORMATION',
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey),
+              ),
+            ]),
+            SizedBox(
+              height: 10,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'State',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                ),
+                Text('Karnataka'),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'Email',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text('greenecart@gmail.com')
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    side: BorderSide(width: 2, color: Colors.blue)),
+                child: Text(
+                  'Share reciept',
+                  style: TextStyle(color: Colors.blue),
+                ),
+              ),
             )
           ],
         ),
